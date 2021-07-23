@@ -49,4 +49,4 @@ if [ -f /configs/features.conf ]; then
         cp /configs/features.conf "${CONFIG_VOLUME}"/
 fi
 chmod +x /usr/bin/on-start.sh
-/usr/bin/peer-finder -on-start=/usr/bin/on-start.sh -service=$K8_SERVICE -ns=${NAMESPACE} -domain=cluster.local -address-type=IP
+/usr/bin/peer-finder -on-start=/usr/bin/on-start.sh -service=$K8_SERVICE -ns=${NAMESPACE} -domain=cluster.local -selector="app=aerospike-cluster"
